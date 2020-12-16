@@ -18,9 +18,9 @@ exports.getPost = (req, res) => {
 }
 
 exports.createPost = (req, res) => {
-  const {body, title, author = 'Bryant Brock'} = req.body
+  const {body, title, imageUrl, author = 'Bryant Brock'} = req.body
   const post = {
-    body, title, author,
+    body, title, author, imageUrl,
     created: new Date().toISOString(),
     likes: 0
   }
