@@ -1,7 +1,9 @@
 exports.unwrap = collection => {
   var result = []
 
-  collection.forEach(doc => result.push(doc.data()))
+  collection.forEach(doc => result.push(
+    Object.assign({}, {id: doc.id}, doc.data())
+  ))
 
   return result
 }
